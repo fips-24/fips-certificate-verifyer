@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festari Certificate Verification System</title>
-    <link rel="icon" type="image/png" href="./assets/logo festari.png" onerror="this.href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>'">
+    <!-- Favicon with fallback -->
+    <link rel="icon" type="image/png" href="./assets/logo-festari.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23d4af37'/><text x='50' y='60' text-anchor='middle' font-size='30' font-weight='bold' fill='%230a3814'>F</text></svg>">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -73,6 +75,7 @@
             z-index: 1;
         }
 
+        /* Company Logo Styling */
         .company-logo {
             display: inline-block;
             margin-bottom: 1rem;
@@ -86,36 +89,30 @@
             background: transparent;
         }
 
-        /* Fallback if image doesn't load */
         .company-logo-text {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            letter-spacing: 1px;
-            display: none;
-        }
-
-        .company-logo img:not([src]), 
-        .company-logo img[src=""] {
-            display: none;
-        }
-
-        .company-logo img:not([src]) + .company-logo-text,
-        .company-logo img[src=""] + .company-logo-text {
-            display: block;
+            letter-spacing: 2px;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .main-logo {
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .main-logo img {
@@ -126,16 +123,10 @@
             background: transparent;
         }
 
-        /* Fallback icon if logo doesn't load */
         .main-logo-fallback {
-            font-size: 2rem;
-            color: var(--white);
-            display: none;
-        }
-
-        .main-logo img:not([src]) + .main-logo-fallback,
-        .main-logo img[src=""] + .main-logo-fallback {
-            display: block;
+            font-size: 2.2rem;
+            color: var(--festari-gold);
+            font-weight: bold;
         }
 
         .header-title {
